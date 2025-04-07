@@ -1,0 +1,37 @@
+# backend/Pipfile
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# Основной фреймворк (выберите один или адаптируйте)
+fastapi = "*"
+# Или django = "*"
+# Или flask = "*"
+
+# ASGI сервер для FastAPI (или Gunicorn для Django/Flask)
+uvicorn = "*"
+# gunicorn = "*"
+PyJwt = "*"
+# Для работы с PostgreSQL
+psycopg2-binary = "*" # Используйте psycopg2 для продакшена без -binary
+
+# ORM (если используете)
+sqlalchemy = "*"
+pytest = "*"
+httpx = "*"
+# alembic = "*" # Для миграций SQLAlchemy
+python-multipart = "*"
+# Другие необходимые библиотеки
+requests = "*"
+pydantic = "*" # Часто используется с FastAPI
+
+[dev-packages]
+# Зависимости для разработки (тесты, линтеры)
+pytest = "*"
+flake8 = "*"
+black = "*"
+
+[requires]
+python_version = "3.10" # Укажите вашу версию Python
