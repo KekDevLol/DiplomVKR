@@ -27,16 +27,21 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend/VKR
       dockerfile: Dockerfile
     container_name: agent_manager_frontend
-    restart: unless-stopped
     ports:
-      - "5173:5173" # Vite использует 5173
+      - "3000:3000"
     volumes:
-      - ./frontend:/app # Монтируем всю папку, чтобы код обновлялся в реальном времени
+      - ./frontend/VKR:/app:cached
+      - /app/node_modules
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - NODE_ENV=development
     command: npm run dev
+    depends_on:
+      - backend
 
-# Define the named volume here
 volumes:
   postgres_data:
