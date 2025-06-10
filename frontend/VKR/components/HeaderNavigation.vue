@@ -5,6 +5,12 @@
         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.333333 0.833333H4.7778V5.2778H9.2222V9.7222H13.6667V14.1667H0.333333V0.833333Z" fill="#121417"/>
       </svg>
       <span class="logo-text">AgentCraft</span>
+      <div style="margin-left: auto; gap: 16px; display: flex">
+        <v-btn variant="text">Дашборд</v-btn>
+        <v-btn variant="text">Агенты</v-btn>
+        <v-btn variant="text">Администирование</v-btn>
+        <v-btn color="#1A80E5">Новый агент</v-btn>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +32,7 @@ export default {
 
 .logo {
   gap: 16px;
+  width: 100%;
 }
 
 .logo-text {
